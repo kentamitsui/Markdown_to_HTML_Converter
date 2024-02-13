@@ -13,10 +13,12 @@ def convert(mdfile, htmlfile):
     
     with open(mdfile, "r", encoding="utf-8") as md:
         read_md = md.read()
-    
+    md.close()
+
     content_html = markdown.markdown(read_md, extensions=["tables"])
     with open(htmlfile, "w") as html:
         html.write(content_html)
+    html.close()
     pass
 
 def main():
